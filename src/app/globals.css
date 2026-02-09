@@ -1,26 +1,1030 @@
-@import "tailwindcss";
-
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --bg: #e7ddd2;
+  --primary: #6d3d2a;
+  --text: #3a1f15;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-inter), sans-serif;
+}
+
+/* Headings use Playfair */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-playfair), serif;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.pageTitle {
+  font-family: "Playfair Display", serif;
+  font-size: 38px;
+  margin-bottom: 20px;
+}
+
+.pageText {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.toolsList {
+  list-style: none;
+  padding: 0;
+  font-size: 18px;
+}
+
+.toolsList li {
+  margin: 10px 0;
+}
+.nav {
+  background: #6d3d2a;
+  color: white;
+  padding: 18px 0;
+}
+
+.navInner {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+}
+
+.navLinks a {
+  margin-left: 25px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+/* HERO SECTION */
+.hero {
+  padding: 110px 20px;
+}
+
+.heroInner {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+/* Oval Image like reference */
+.heroImageWrap img {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 50% / 50%;
+}
+
+/* Right text */
+.heroContent {
+  max-width: 620px;
+}
+
+.heroContent h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 46px;
+  line-height: 1.2;
+  color: #3a1f15;
+  margin-bottom: 22px;
+}
+
+.heroContent p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #4c2a1f;
+  margin-bottom: 24px;
+}
+
+.heroContent h3 {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  color: #3a1f15;
+}
+/* NAVIGATION SECTION */
+
+.navSection {
+  background: #e9e7e4;
+  padding: 90px 20px;
+  text-align: center;
+}
+
+.navSection h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 44px;
+  margin-bottom: 50px;
+  color: #3a1f15;
+}
+
+.navGrid {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+.navCard {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.navCard img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.navCard:hover img {
+  transform: scale(1.06);
+}
+
+/* Dark overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(90, 40, 20, 0.35);
+}
+
+/* Card text */
+.navCard span {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  color: white;
+}
+/* FEATURED CONTENT */
+
+.featuredSection {
+  padding: 30px 20px 90px; /* reduced top space */
+  text-align: center;
+}
+
+.featuredSection h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 44px;
+  margin-bottom: 10px;
+}
+
+.featuredDesc {
+  max-width: 600px;
+  margin: 0 auto 40px;
+  font-size: 17px;
+  color: #5a3a2c;
+}
+
+.featuredGrid {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.playBtn {
+  position: absolute;
+  font-size: 42px;
+  color: white;
+  opacity: 0.9;
+}
+
+.reelCard span {
+  position: absolute;
+  bottom: 16px;
+  left: 20px;
+  right: 20px;
+  color: white;
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+  text-align: left;
+}
+
+/* VIDEO CARDS */
+
+.videoCard iframe {
+  width: 100%;
+  height: 360px;
+  border: none;
+  border-radius: 6px;
+}
+
+.videoCard p {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #5a3a2c;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .featuredGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .reelCard,
+  .videoCard iframe {
+    height: 260px;
+  }
+}
+/* REEL CARD WITH THUMBNAIL */
+
+.reelCard {
+  position: relative;
+  height: 360px;
+  display: block;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.reelCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.reelCard:hover img {
+  transform: scale(1.05);
+}
+
+.playBtn {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 42px;
+  color: white;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.reelCard span {
+  position: absolute;
+  bottom: 14px;
+  left: 16px;
+  right: 16px;
+  color: white;
+  font-family: "Playfair Display", serif;
+  font-size: 17px;
+}
+/* ===== ABOUT PAGE ===== */
+
+.aboutPage {
+  padding: 90px 20px;
+}
+
+.aboutInner {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* LEFT IMAGE */
+
+.aboutImage img {
+  width: 100%;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+/* RIGHT CONTENT */
+
+.aboutContent h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 42px;
+  margin-bottom: 18px;
+}
+
+.aboutContent h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 26px;
+  margin-top: 30px;
+}
+
+.aboutContent p {
+  line-height: 1.8;
+  margin-bottom: 12px;
+  color: #4a2c21;
+}
+
+.aboutContent ul {
+  padding-left: 18px;
+  margin-top: 10px;
+}
+
+.aboutContent li {
+  margin-bottom: 6px;
+}
+
+/* CONTACT */
+
+.aboutContact {
+  margin-top: 25px;
+}
+
+.aboutContact a {
+  color: #6d3d2a;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .aboutInner {
+    grid-template-columns: 1fr;
+  }
+
+  .aboutContent h1 {
+    font-size: 32px;
+  }
+}
+/* EMAIL BUTTON */
+
+.emailBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+/* CENTER CONTACT ROW */
+
+.aboutContactCentered {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+
+  flex-wrap: wrap;
+}
+
+/* CONTACT BUTTON */
+
+.contactIconBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+/* ===== WORK PAGE ===== */
+
+.workPage {
+  padding: 80px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.workHeader {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.workHeader h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 44px;
+  margin-bottom: 10px;
+}
+
+.workHeader p {
+  max-width: 620px;
+  margin: auto;
+  color: #5a3a2c;
+  line-height: 1.7;
+}
+
+/* BLOCK */
+
+.workBlock {
+  margin-bottom: 70px;
+}
+
+.workBlock h2 {
+  font-family: "Playfair Display", serif;
+  margin-bottom: 20px;
+}
+
+/* GRID */
+
+.workGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+/* CARD */
+
+.workCard {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+/* PLAY OVERLAY */
+
+.playOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 42px;
+  color: white;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* Make reel look vertical */
+.workCard img {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+}
+
+.workCard:hover img {
+  transform: scale(1.05);
+}
+
+.workCard span {
+  position: absolute;
+  bottom: 10px;
+  left: 12px;
+  color: white;
+  font-family: "Playfair Display", serif;
+}
+
+/* BRAND */
+
+.brandDesc {
+  max-width: 650px;
+  color: #5a3a2c;
+  margin-bottom: 18px;
+}
+
+.brandLinks a {
+  display: inline-block;
+  margin-right: 18px;
+  font-weight: 600;
+  color: #6d3d2a;
+  text-decoration: none;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .workGrid {
+    grid-template-columns: 1fr;
+  }
+}
+.loadingCard {
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eee;
+}
+/* ===== SOCIAL ===== */
+
+.socialLinks {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.socialCard {
+  display: block;
+  padding: 14px 18px;
+  background: #f3eee9;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #5a3a2c;
+  transition: 0.2s ease;
+}
+
+.socialCard:hover {
+  background: #e7ddd2;
+}
+
+.socialCard span {
+  display: block;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.socialCard strong {
+  font-size: 16px;
+}
+/* ===== BRAND PAGE ===== */
+
+/* ===== BRAND CLEAN REDESIGN ===== */
+
+.brandPage {
+  padding: 80px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* HERO CENTER */
+
+.brandHeroCenter {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.brandHeroCenter h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 42px;
+  margin-bottom: 12px;
+}
+
+.brandHeroCenter p {
+  max-width: 640px;
+  margin: auto;
+  color: #5a3a2c;
+  line-height: 1.7;
+}
+
+/* VIDEO + TEXT */
+
+.brandShowcase {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 70px;
+}
+
+.brandVideo iframe {
+  width: 100%;
+  height: 280px;
+  border-radius: 8px;
+  border: none;
+}
+
+.brandText h2 {
+  font-family: "Playfair Display", serif;
+  margin-bottom: 10px;
+}
+
+.brandText p {
+  color: #5a3a2c;
+  line-height: 1.7;
+}
+
+/* MARKETPLACE */
+
+.brandMarketplace {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.brandMarketplace h2 {
+  font-family: "Playfair Display", serif;
+  margin-bottom: 20px;
+}
+
+.marketGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  max-width: 700px;
+  margin: auto;
+}
+
+.marketCard {
+  display: block;
+  padding: 16px;
+  background: #f3eee9;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #5a3a2c;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.marketCard:hover {
+  background: #e7ddd2;
+}
+
+.brandCredit {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #777;
+}
+
+/* PRODUCT MINIMAL */
+
+.brandProductMinimal img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .brandShowcase {
+    grid-template-columns: 1fr;
+  }
+
+  .marketGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .brandVideo iframe {
+    height: 220px;
+  }
+}
+/* ===== BRAND PRODUCT SHOWCASE ===== */
+
+.brandProductShowcase {
+  margin-top: 90px;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 50px;
+  align-items: center;
+}
+
+/* BRAND IMAGE */
+
+.brandVisual img {
+  width: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  width: 400px;
+  height: 400px;
+}
+
+/* RIGHT SIDE */
+
+.brandProductInfo h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.brandProductInfo p {
+  color: #5a3a2c;
+  line-height: 1.7;
+  margin-bottom: 22px;
+}
+
+/* MINI PRODUCT CARD */
+
+.productMiniCard {
+  display: flex;
+  gap: 18px;
+  background: #f7f3ef;
+  padding: 16px;
+  border-radius: 14px;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.04);
+}
+
+.productMiniCard img {
+  width: 90px;
+  border-radius: 6px;
+}
+
+.productMiniCard h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+/* LINKS */
+
+.productLinks {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.productLinks a {
+  font-size: 14px;
+  font-weight: 600;
+  color: #6d3d2a;
+  text-decoration: none;
+  position: relative;
+}
+
+.productLinks a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background: #6d3d2a;
+  transition: 0.2s ease;
+}
+
+.productLinks a:hover::after {
+  width: 100%;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .brandProductShowcase {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .productMiniCard {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .productMiniCard img {
+    width: 100%;
+  }
+}
+/* Hide hamburger desktop */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  margin-right: 18px;
+}
+
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background: white;
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+/* Mobile Menu */
+.mobileMenu {
+  display: none;
+  flex-direction: column;
+  background: #6d3d2a;
+  text-align: center;
+}
+
+.mobileMenu a {
+  padding: 14px;
+  color: white;
+  text-decoration: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobileMenu.show {
+  display: flex;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .desktop {
+    display: none;
+  }
+
+  .navInner {
+    padding: 0 16px; /* keeps logo left + hamburger right safe */
+  }
+
+  .hamburger {
+    margin-right: 4px; /* small tweak if needed */
+  }
+}
+/* ===== SERVICES PAGE ===== */
+
+.servicesPage {
+  padding: 90px 20px;
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+}
+
+.servicesHeader h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 44px;
+  margin-bottom: 10px;
+}
+
+.servicesHeader p {
+  max-width: 640px;
+  margin: auto;
+  color: #5a3a2c;
+  line-height: 1.7;
+  margin-bottom: 50px;
+}
+
+/* GRID */
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+/* CARD */
+
+.serviceCard {
+  background: #f3eee9;
+  padding: 28px 20px;
+  border-radius: 14px;
+  transition: 0.25s ease;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  text-align: left;
+}
+
+.serviceCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 24px rgba(0, 0, 0, 0.06);
+  background: #ece4dc;
+}
+
+.serviceIcon {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.serviceCard h3 {
+  font-family: "Playfair Display", serif;
+  margin-bottom: 8px;
+}
+
+.serviceCard p {
+  font-size: 14px;
+  color: #5a3a2c;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.serviceTools {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6d3d2a;
+  background: rgba(109, 61, 42, 0.08);
+  padding: 6px 10px;
+  border-radius: 6px;
+  letter-spacing: 0.2px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .servicesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== CONTACT PAGE ===== */
+
+.contactPage {
+  padding: 100px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.contactCard {
+  background: #f3eee9;
+  padding: 40px 30px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 420px;
+  width: 100%;
+}
+
+.contactCard h1 {
+  font-family: "Playfair Display", serif;
+  margin-bottom: 10px;
+}
+
+.contactDesc {
+  color: #5a3a2c;
+  margin-bottom: 25px;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  text-decoration: none;
+  color: #3a1f15;
+  font-weight: 500;
+}
+
+.contactItem:hover {
+  color: #6d3d2a;
+}
+
+.contactSocial {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.contactSocial a {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #e7ddd2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3a1f15;
+  transition: 0.2s ease;
+}
+
+.contactSocial a:hover {
+  background: #6d3d2a;
+  color: white;
+}
+.navSocial {
+  display: flex;
+  gap: 14px;
+  margin-left: 16px;
+}
+
+.navSocial a {
+  color: white;
+  opacity: 0.9;
+}
+
+.navSocial a:hover {
+  opacity: 1;
+}
+/* ===== FLOATING RESUME BUTTON ===== */
+
+.floatingResume {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  background: #6d3d2a;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  transition: 0.2s ease;
+  z-index: 999;
+}
+
+.floatingResume:hover {
+  background: #542b1d;
+  transform: translateY(-2px);
+}
+
+/* Mobile smaller */
+@media (max-width: 600px) {
+  .floatingResume span {
+    display: none;
+  }
+
+  .floatingResume {
+    padding: 12px;
+  }
 }
