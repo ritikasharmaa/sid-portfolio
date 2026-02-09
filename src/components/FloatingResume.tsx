@@ -3,7 +3,7 @@ import { Download } from "lucide-react";
 export default function FloatingResume() {
   return (
     <a
-      href="/resume.pdf"
+      href="/sid-resume.pdf"
       download
       className="floatingResume"
       title="Download Resume"
