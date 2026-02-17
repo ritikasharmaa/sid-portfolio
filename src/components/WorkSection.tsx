@@ -2,6 +2,12 @@
 
 const reels = [
   {
+    url: "https://www.instagram.com/reel/DUxEz_JiPTi/",
+    thumb: "/images/clients/client-work6.jpeg",
+    tag: "🔥 100K in 48h",
+    caption: "High-Performance Storytelling Reel",
+  },
+  {
     url: "https://www.instagram.com/reel/DOyD9d1ku14/?igsh=bXE4emVqYTA3ZXY1",
     thumb: "/images/reels/work-reel1.jpeg",
   },
@@ -74,6 +80,8 @@ export default function WorkSection() {
           {reels.map((r, i) => (
             <a key={i} href={r.url} target="_blank" className="workCard">
               <img src={r.thumb} alt="Reel" loading="lazy" />
+              {/* ⭐ Performance Badge */}
+              {r.tag && <div className="performanceBadge">{r.tag}</div>}
               <div className="playOverlay">▶</div>
               <span>Instagram Reel</span>
             </a>

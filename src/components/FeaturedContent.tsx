@@ -9,6 +9,24 @@ export default function FeaturedContent() {
       </p>
 
       <div className="featuredGrid">
+        {/* ⭐ 100K STORYTELLING REEL — TOP PERFORMER */}
+        <a
+          href="https://www.instagram.com/reel/DUxEz_JiPTi/"
+          target="_blank"
+          className="reelCard"
+        >
+          <img
+            src="/images/clients/client-work6.jpeg"
+            alt="100K Storytelling Reel"
+          />
+
+          {/* Performance Badge */}
+          <div className="performanceBadge">🔥 100K in 48h</div>
+
+          <div className="playBtn">▶</div>
+
+          <span>Storytelling Reel — 100K reach</span>
+        </a>
         {/* Instagram Reel 1 */}
         <a
           href="https://www.instagram.com/reel/DQMRa-6EpJv/"
